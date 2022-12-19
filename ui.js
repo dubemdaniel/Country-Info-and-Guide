@@ -17,7 +17,24 @@ class UI{
             <h2><span class="font-semibold">currency</span>: ${digit.currencies[Object.keys(digit.currencies)].name} - ${Object.keys(digit.currencies)}</h2>
             <h2><span class="font-semibold">common language</span> : ${Object.values(digit.languages).toString().split(",").join(", ")}</h2>
         </div>
-        `
+        `}
+
+        showAlert(){
+            this.main.innerHTML = `
+                <h2 class="text-red-500 text-xl font-medium" id="error">please input a country name...</h2>            
+            `
+        
+            setTimeout(() => {
+                this.clearAlert()
+            }, 3000);
+        }
+        clearAlert(){
+            const error = document.getElementById('error')
+
+            if(error){
+                error.remove();
+            }
+        }
 
         // console.log(data.fullResponse)
         // console.log(data.fullResponse.capital)
@@ -29,5 +46,5 @@ class UI{
         // console.log(data.fullResponse.currencies[Object.keys(data.fullResponse.currencies)].name)
         // console.log(Object.values(data.fullResponse.languages).toString().split(",").join(", "))
 
-    }
+    
 }
