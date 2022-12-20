@@ -17,14 +17,18 @@ search.addEventListener('click', (e) => {
 
     country.getCountry(countryName) 
         .then(data => {
+
+            if(!data.fullResponse[0]){
+                ui.showAlert('please enter a valid country name...')
+            } else{
             ui.showDetails(data.fullResponse[0])
-
-
+            }
 
         })   
 
     }else{
-        ui.showAlert()
+        // show error alert
+        ui.showAlert('please input a country name...')
     }
  
     e.preventDefault()

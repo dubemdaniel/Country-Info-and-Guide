@@ -19,9 +19,9 @@ class UI{
         </div>
         `}
 
-        showAlert(){
+        showAlert(message){
             this.main.innerHTML = `
-                <h2 class="text-red-500 text-xl font-medium" id="error">please input a country name...</h2>            
+                <h2 class="text-red-500 text-xl font-medium" id="error">${message}</h2>            
             `
         
             setTimeout(() => {
